@@ -9,14 +9,16 @@ $('#select-exercise').change(function(event) {
     
     switch (exerciseValue) {
         case 'cardio':
-            console.log('cardio');
+            $('.resistance-form').hide()
+            $('.cardio-form').show()
             break;
-
         case 'resistance':
-            console.log('resistance');
+            $('.cardio-form').hide()
+            $('.resistance-form').show()
             break;
-
         default:
+            $('.cardio-form').hide()
+            $('.resistance-form').hide()
             break;
     }
 
