@@ -10,12 +10,7 @@ app.use(express.static('public'))
 
 
 
-
 app.use('/', require('./routes/workouts'))
-
-
-
-
 
 
 db.initDb((err, db ) => {

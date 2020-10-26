@@ -4,7 +4,6 @@ const db = require('../config/db')
 
 
 router.get('/', (req,res) => {
-    
     const workouts = []
     db.getDb().db().collection('cardio')
     .find().forEach(cardio => {
@@ -23,14 +22,37 @@ router.get('/', (req,res) => {
 
 
 
-router.post('/', async (req,res) => {
-    console.log()
-    // try {
-    // const savedPost = await post.save()
-    // res.json(savedPost)
-    // }catch(err){
-    //     res.json({ message: err })
-    // }
+router.post('/', (req,res) => {
+    if (req.body.Type == 'cardio') {
+    var convertedWorkout = {
+        Date: req.body.Date,
+        Type: req.body.Type,
+        Name: req.body.Name,
+        Distance: parseInt(req.body.Distance),
+        Duration: parseInt(req.body.Duration)
+    }
+    } else {
+        var convertedWorkout = {
+            Date: req.body.Date,
+            Type: req.body.Type,
+            Name: req.body.Name,
+            Reps: parseInt(req.body.Reps),
+            Sets: parseInt(req.body.Sets),
+            Weight: parseInt(req.body.Weight),
+        }
+    }
+
+    db.getDb()
+    .db()
+    .collection('workouts')
+    .insertOne(convertedWorkout)
+    .then(() => {
+        res.sendStatus(200);
+      })
+      .catch(err => {
+        console.log(err)
+        res.status(500).json({ message: 'error occurred'});
+    })
 })
 
 

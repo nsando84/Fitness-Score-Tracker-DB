@@ -1,7 +1,5 @@
 $(document).ready(function () {
 
-
-
 // selection exercise option //
 
 $('#select-exercise').change(function(event) {
@@ -26,11 +24,15 @@ $('#select-exercise').change(function(event) {
 
 // add workout button // 
 
+const time = moment().format('MMMM Do YYYY')
+
 $('#add-workout-button').on('click', event => {
     let exerciseValue = $('#select-exercise').val()
     switch (exerciseValue) {
         case 'cardio':
             let cardioWorkout = {
+                Date: time,
+                Type: 'cardio',
                 Name: $('#cardio-name').val(),
                 Distance: $('#distance').val(),
                 Duration: $('#duration').val()
@@ -39,6 +41,8 @@ $('#add-workout-button').on('click', event => {
             break;
         case 'resistance':
             let resistanceWorkout = {
+                Date: time,
+                Type: 'resistance',
                 Name: $('#resistance-name').val(),
                 Weight: $('#weight').val(),
                 Sets: $('#sets').val(),
@@ -57,15 +61,17 @@ $('#add-workout-button').on('click', event => {
 // function to add to db //
 
 function addToDb(exerciseData) {
-    console.log(exerciseData)
-
-    // $.ajax()
-
-
-
+    $.ajax('/', {
+        method: 'POST',
+        data: exerciseData
+    })
+    .then(() => {
+        console.log('then ajax')
+        $('.cardio-form :input').val('')
+        $('.resistance-form :input').val('')
+    })
+    .catch(err => console.log(err))
 
 }
-
-
 
 });
