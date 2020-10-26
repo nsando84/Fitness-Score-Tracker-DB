@@ -10,7 +10,7 @@ router.get('/', (req,res) => {
         workouts.push(cardio)
     })
     .then(() => {
-        res.render('main', { workouts })
+        res.render('main')
 
     })
     .catch(err => {

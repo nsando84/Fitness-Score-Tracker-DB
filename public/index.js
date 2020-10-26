@@ -1,4 +1,23 @@
-$(document).ready(function () {
+
+// chart //
+const ChartsEmbedSDK = window.ChartsEmbedSDK
+const sdk = new ChartsEmbedSDK({
+    baseUrl: 'https://charts.mongodb.com/charts-project-0-obljt'
+
+})
+
+const chart = sdk.createChart({
+    chartId: '88ff5b81-92f2-471f-9fe6-4de476bac2ef',
+    width: 650,
+    height: 400,
+    theme: 'dark',
+    autoRefresh: true,
+    refreshInterval: 10
+})
+
+chart.render(document.getElementById('chart'))
+
+
 
 // selection exercise option //
 
@@ -69,9 +88,17 @@ function addToDb(exerciseData) {
         console.log('then ajax')
         $('.cardio-form :input').val('')
         $('.resistance-form :input').val('')
+        chart.refresh()
+        console.log(chart)
     })
     .catch(err => console.log(err))
 
 }
 
-});
+
+
+
+
+
+
+
