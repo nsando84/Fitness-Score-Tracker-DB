@@ -9,11 +9,9 @@ router.get('/', (req,res) => {
         res.render('main')
     } else {
     db.getDb().db().collection('workoutdb')
-    .find({name: req.query.name}).forEach(userData => {
-        console.log(userData)
-    })
-    .then(() => {
-        res.sendStatus(200)
+    .findOne({name: req.query.name})
+    .then(result => {
+        res.send(result)
     })
     .catch(err => {
         console.log(err)
@@ -55,8 +53,7 @@ router.post('/', (req,res) => {
                 .collection('workoutdb')
                 .findOne({_id: result._id})
                 .then(result => {
-                    console.log(result)
-                    res.sendStatus(200);
+                    res.send(result)
                 })
                 .catch(err => {
                     console.log(err)

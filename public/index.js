@@ -50,8 +50,8 @@ $('.search-button-wrapper').on('submit', event => {
         method: 'GET',
         data: airmanName
     })
-    .then(() => {
-        console.log('get request return ajax')
+    .then(results => {
+        console.log(results)
     })
     .catch(err => console.log(err))
 
