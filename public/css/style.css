@@ -27,11 +27,6 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	/* background-image: url('../images/airforcelogo.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-position-y: center; */
 }
 ol, ul {
 	list-style: none;
@@ -61,12 +56,17 @@ table {
 	max-width: 350px;
 }
 
+#myChart {
+	max-height: 350px;
+	margin: 0;
+	padding: 0;
+}
+
 .search-button-wrapper {
 	max-width: 300px;
 }
 
 #chart, .fitness-form {
 	padding: 10px;
-	/* background-color: rgb(99, 162, 233); */
 	
 }
