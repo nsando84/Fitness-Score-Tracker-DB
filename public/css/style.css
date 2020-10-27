@@ -59,10 +59,14 @@ table {
 
 #chart {
 	max-width: 350px;
-	height: 400px;
-	background-color: bisque;
 }
 
 .search-button-wrapper {
 	max-width: 300px;
+}
+
+#chart, .fitness-form {
+	padding: 10px;
+	/* background-color: rgb(99, 162, 233); */
+	
 }

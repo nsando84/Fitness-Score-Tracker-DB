@@ -1,34 +1,38 @@
 <body>
   
     <nav class="navbar navbar-light bg-dark text-primary">
-        <span class="h1">Fitness Evaluation</span>
+        <span class="h1">Fitness Test Scoring</span>
       </nav>
-<div class="container mb-5">
-    <div class="mx-auto mt-3 mb-3" id="chart"></div>
-    <form class="search-button-wrapper mx-auto row">
-      <input class="form-control col-9" type="search" placeholder="Search" aria-label="Search" class="d-inline-block">
-      <button class="btn btn-outline-dark col" type="submit">Search</button>
+<div class="container mb-4 mt-1">
+    <div class="mx-auto p-0" id="chart"><canvas id="myChart" height="350"></canvas>
+    <form class="search-button-wrapper mx-auto row mt-3">
+      <input class="form-control col-9 border-dark" type="search" placeholder="Search" aria-label="Search" class="d-inline-block">
+      <button class="btn btn-light col border-dark" type="submit">Search</button>
     </form>
+    
+
+    </div>
+    
   
-    <div class="form-wrapper ">
+    <div class="form-wrapper">
         <div class="fitness-form mx-auto">
-            <div class="airman-name d-flex justify-content-between border-bottom mt-4">
+            <div class="airman-name d-flex justify-content-between border-bottom border-dark mt-4 mb-1">
               <label for="airman-name" class="p-2">Airman's name:</label>
               <input type="text" name="airman-name" id="airman-name">
             </div>
-            <div class="airman-age d-flex justify-content-between border-bottom">
+            <div class="airman-age d-flex justify-content-between border-bottom border-dark mt-1 mb-1">
               <label for="airman-age" class="p-2">Airman's age:</label>
               <select id="airman-age">
                 <option value="30">under 30 years old</option>
               </select>
             </div>
-            <div class="cardio-endurance d-flex justify-content-between border-bottom">
+            <div class="cardio-endurance d-flex justify-content-between border-bottom border-dark mt-1 mb-1">
               <label for="cardio-endurance" class="p-2">Cardio Endurance:</label>
               <div>
               <input type="number" name="name" id="cardio-time-1" min= "0" max="59">:<input type="number" name="name" id="cardio-time-2" min= "0" max="59">
               </div>
             </div>
-            <div class="body-composition d-flex justify-content-between border-bottom">
+            <div class="body-composition d-flex justify-content-between border-bottom border-dark mt-1 mb-1">
               <label for="body-composition" class="p-2">Body Composition:</label>
               <select id="body-composition">
                 <option value="35">32.5 or lower</option>
@@ -48,23 +52,24 @@
                 <option value="39.5">39.5 or higher</option>
               </select>
             </div>
-            <div class="push-ups d-flex justify-content-between border-bottom">
+            <div class="push-ups d-flex justify-content-between border-bottom border-dark mt-1 mb-1">
               <label for="push-ups" class="p-2">Push-ups:</label>
               <input type="number" name="sets" id="push-ups" min= "0" max="999">
             </div>
-            <div class="sit-ups d-flex justify-content-between border-bottom">
+            <div class="sit-ups d-flex justify-content-between border-bottom border-dark mt-1 mb-1">
               <label for="sit-ups" class="p-2">Sit-ups:</label>
               <input type="number" name="reps" id="sit-ups" min= "0" max="999">
             </div>
 
 
-            <button type="button" class="btn btn-primary mt-4" id="add-workout-button">Add evaluation</button>
-    
+            <button type="button" class="btn btn-light border-dark mt-4" id="add-workout-button">Add evaluation</button>
+      <div class="text-center mb-3 mt-4">
+All data is based on documents <a href="https://www.afpc.af.mil/portals/70/documents/06_CAREER%20management/03_fitness%20program/fitness%20charts.pdf">here.</a>
+</div>
 
     </div>
+    
 </div>
 
-<div class="text-center mb-3 mt-4">
-<a href="https://www.afpc.af.mil/portals/70/documents/06_CAREER%20management/03_fitness%20program/fitness%20charts.pdf">All data is based on official docs here.</a>
-</div>
+
 </div>
