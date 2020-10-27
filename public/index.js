@@ -93,8 +93,6 @@ function makeChart(userData) {
             } 
         }
     }
-    // console.log(workoutTotals)
-    // console.log(workoutKey)
     let ctx = document.getElementById('myChart').getContext('2d');
     let myChart = new Chart(ctx, {
         type: 'bar',
