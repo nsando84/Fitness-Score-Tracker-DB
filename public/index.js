@@ -37,7 +37,24 @@ function addToDb(exerciseData) {
 
 
 
+// search for an airman //
 
+$('.search-button-wrapper').on('submit', event => {
+    event.preventDefault()
+    const airmanName = {
+        name: $('.search-button-wrapper :input').val()
+    }
+    $.ajax('/', {
+        method: 'GET',
+        data: airmanName
+    })
+    .then(() => {
+        console.log('get request return ajax')
+    })
+    .catch(err => console.log(err))
+
+
+})
 
 
 

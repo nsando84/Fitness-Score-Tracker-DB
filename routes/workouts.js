@@ -7,20 +7,23 @@ const year = moment().format('YYYY')
 
 
 router.get('/', (req,res) => {
+    if (!req.query.name) {
+        res.render('main')
+    } else {
     const workouts = []
-    db.getDb().db().collection('cardio')
+    console.log(req.query.name)
+    db.getDb().db().collection('workoutdb')
     .find().forEach(cardio => {
         workouts.push(cardio)
     })
     .then(() => {
-        res.render('main')
-
+        res.sendStatus(200)
     })
     .catch(err => {
         console.log(err)
         res.status(500).json({ message: 'error loading page'});
       })
-
+    }
 })
 
 
