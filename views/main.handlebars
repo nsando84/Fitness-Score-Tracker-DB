@@ -7,77 +7,34 @@
     <div class="mx-auto" id="chart"></div>
 
     <div class="form-wrapper container">
-    {{!-- <form >
-        <div class="form-group">
-            <label for="Select-Exercise">Select Exercise</label>
-            <select class="form-control" id="select-exercise">
-                <option>Add Excerise</option>
-              <option value="resistance">Resistance</option>
-              <option value="cardio">Cardio</option>
-            </select>
-          </div>
-    </form> --}}
+ 
     <div class="exercise-wrapper">
-{{!--         
-        <div class="cardio-form">
-            <div class="cardio-name">
-              <label for="cardio-name">Name:</label>
-              <input type="text" name="cardio-name" id="cardio-name" placeholder="Running" />
-            </div>
-            <div class="distance">
-              <label for="distance">Distance (miles):</label>
-              <input type="number" name="distance" id="distance" placeholder="5" />
-            </div>
-            <div class="duration">
-              <label for="duration">Duration (minutes):</label>
-              <input type="number" name="duration" id="duration" placeholder="10" />
-            </div>
-        </div> --}}
-
-        {{!-- <div class="resistance-form">
-            <div class="exercise">
-              <label for="name">Exercise Name:</label>
-              <input type="text" name="name" id="resistance-name" placeholder="Bench Press" />
-            </div>
-            <div class="weight">
-              <label for="weight">Weight (lbs):</label>
-              <input type="number" name="weight" id="weight" placeholder="200" />
-            </div>
-            <div class="sets">
-              <label for="sets">Sets:</label>
-              <input type="number" name="sets" id="sets" placeholder="4" />
-            </div>
-            <div class="reps">
-              <label for="reps">Reps:</label>
-              <input type="number" name="reps" id="reps" placeholder="10" />
-            </div>
-            <div class="resistance-duration">
-              <label for="resistance-duration">Duration (minutes):</label>
-              <input type="number" name="resistance-duration" id="resistance-duration" placeholder="10" />
-            </div>
-        </div> --}}
-
 
         <div class="fitness-form">
-            <div class="airman-name d-flex justify-content-between border border-bottom mt-4">
-              <label for="cardio-name">Airman's name:</label>
+            <div class="airman-name d-flex justify-content-between border-bottom mt-4">
+              <label for="airman-name" class="p-2">Airman's name:</label>
               <input type="text" name="airman-name" id="airman-name">
             </div>
-
-            <div class="cardio-endurance d-flex justify-content-between border border-bottom">
-              <label for="cardio-endurance">Cardio Endurance:</label>
+            <div class="airman-age d-flex justify-content-between border-bottom">
+              <label for="airman-age" class="p-2">Airman's age:</label>
+              <select id="airman-age">
+                <option value="30">under 30 years old</option>
+              </select>
+            </div>
+            <div class="cardio-endurance d-flex justify-content-between border-bottom">
+              <label for="cardio-endurance" class="p-2">Cardio Endurance:</label>
               <div>
               <input type="number" name="name" id="cardio-time-1" min= "0" max="59">:<input type="number" name="name" id="cardio-time-2" min= "0" max="59">
               </div>
             </div>
-            <div class="body-composition d-flex justify-content-between border border-bottom">
-              <label for="body-composition">Body Composition:</label>
+            <div class="body-composition d-flex justify-content-between border-bottom">
+              <label for="body-composition" class="p-2">Body Composition:</label>
               <select id="body-composition">
-                <option value="32.5">32.5 or lower</option>
-                <option value="33">33</option>
-                <option value="33.5">33.5</option>
-                <option value="34">34</option>
-                <option value="34.5">34.5</option>
+                <option value="35">32.5 or lower</option>
+                <option value="35">33</option>
+                <option value="35">33.5</option>
+                <option value="35">34</option>
+                <option value="35">34.5</option>
                 <option value="35">35</option>
                 <option value="35.5">35.5</option>
                 <option value="36">36</option>
@@ -90,12 +47,12 @@
                 <option value="39.5">39.5 or higher</option>
               </select>
             </div>
-            <div class="push-ups d-flex justify-content-between border border-bottom">
-              <label for="push-ups">Push-ups:</label>
+            <div class="push-ups d-flex justify-content-between border-bottom">
+              <label for="push-ups" class="p-2">Push-ups:</label>
               <input type="number" name="sets" id="push-ups" min= "0" max="999">
             </div>
-            <div class="sit-ups d-flex justify-content-between border border-bottom">
-              <label for="sit-ups">Sit-ups:</label>
+            <div class="sit-ups d-flex justify-content-between border-bottom">
+              <label for="sit-ups" class="p-2">Sit-ups:</label>
               <input type="number" name="reps" id="sit-ups" min= "0" max="999">
             </div>
 

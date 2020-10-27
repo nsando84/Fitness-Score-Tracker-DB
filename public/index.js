@@ -78,6 +78,8 @@
 //     }
 // })
 
+
+
 $('#add-workout-button').on('click', event => {
     const airmanName = $('#airman-name').val()
     const cardioTime = $('#cardio-time-1').val() + $('#cardio-time-2').val()
@@ -92,37 +94,27 @@ $('#add-workout-button').on('click', event => {
         pushUps: pushUps,
         sitUps: sitUps
     }
-    
-    console.log(airMan)
-    
+    addToDb(airMan)
 
 })
 
 
 
 
-
-
-
-
-
 // function to add to db //
 
-// function addToDb(exerciseData) {
-//     $.ajax('/', {
-//         method: 'POST',
-//         data: exerciseData
-//     })
-//     .then(() => {
-//         console.log('then ajax')
-//         $('.cardio-form :input').val('')
-//         $('.resistance-form :input').val('')
-//         chart.refresh()
-//         console.log(chart)
-//     })
-//     .catch(err => console.log(err))
+function addToDb(exerciseData) {
+    $.ajax('/', {
+        method: 'POST',
+        data: exerciseData
+    })
+    .then(() => {
+        console.log('then ajax')
+        $('.fitness-form :input').val('')
+    })
+    .catch(err => console.log(err))
 
-// }
+}
 
 
 

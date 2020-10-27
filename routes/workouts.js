@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const db = require('../config/db')
-
+const maleUnder30 = require('./charts')
 
 router.get('/', (req,res) => {
     const workouts = []
@@ -23,36 +23,40 @@ router.get('/', (req,res) => {
 
 
 router.post('/', (req,res) => {
-    if (req.body.Type == 'cardio') {
-    var convertedWorkout = {
-        Date: req.body.Date,
-        Type: req.body.Type,
-        Name: req.body.Name,
-        Distance: parseInt(req.body.Distance),
-        Duration: parseInt(req.body.Duration)
-    }
-    } else {
-        var convertedWorkout = {
-            Date: req.body.Date,
-            Type: req.body.Type,
-            Name: req.body.Name,
-            Reps: parseInt(req.body.Reps),
-            Sets: parseInt(req.body.Sets),
-            Weight: parseInt(req.body.Weight),
-        }
-    }
+    // if (req.body.Type == 'cardio') {
+    // var convertedWorkout = {
+    //     Date: req.body.Date,
+    //     Type: req.body.Type,
+    //     Name: req.body.Name,
+    //     Distance: parseInt(req.body.Distance),
+    //     Duration: parseInt(req.body.Duration)
+    // }
+    // } else {
+    //     var convertedWorkout = {
+    //         Date: req.body.Date,
+    //         Type: req.body.Type,
+    //         Name: req.body.Name,
+    //         Reps: parseInt(req.body.Reps),
+    //         Sets: parseInt(req.body.Sets),
+    //         Weight: parseInt(req.body.Weight),
+    //     }
+    // }
 
-    db.getDb()
-    .db()
-    .collection('workouts')
-    .insertOne(convertedWorkout)
-    .then(() => {
-        res.sendStatus(200);
-      })
-      .catch(err => {
-        console.log(err)
-        res.status(500).json({ message: 'error occurred'});
-    })
+    // maleUnder30()
+    // console.log(req.body)
+    const convertedScore = maleUnder30(req.body.cardioTime, req.body.bodyComposition, req.body.pushUps, req.body.sitUps)
+    console.log(convertedScore)
+    // db.getDb()
+    // .db()
+    // .collection('workouts')
+    // .insertOne(convertedWorkout)
+    // .then(() => {
+    //     res.sendStatus(200);
+    //   })
+    //   .catch(err => {
+    //     console.log(err)
+    //     res.status(500).json({ message: 'error occurred'});
+    // })
 })
 
 

@@ -26,8 +26,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-    line-height: 1;
-    font-family: 'Teko', sans-serif;
+	line-height: 1;
 }
 ol, ul {
 	list-style: none;
@@ -45,6 +44,9 @@ table {
 	border-spacing: 0;
 }
 
+.navbar {
+	font-family: 'Teko', sans-serif
+}
 
 /* .resistance-form, .cardio-form {
     display: none;
