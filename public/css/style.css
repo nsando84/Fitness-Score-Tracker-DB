@@ -46,7 +46,11 @@ table {
 }
 
 
-.resistance-form, .cardio-form {
+/* .resistance-form, .cardio-form {
     display: none;
+} */
+
+.fitness-form {
+	max-width: 300px;
 }
 

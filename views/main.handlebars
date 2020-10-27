@@ -1,13 +1,13 @@
 <body>
   
     <nav class="navbar navbar-light bg-dark text-primary">
-        <span class="h1">Track-Fit</span>
+        <span class="h1">Fitness Evaluation</span>
       </nav>
 <div class="container">
     <div class="mx-auto" id="chart"></div>
 
     <div class="form-wrapper container">
-    <form >
+    {{!-- <form >
         <div class="form-group">
             <label for="Select-Exercise">Select Exercise</label>
             <select class="form-control" id="select-exercise">
@@ -16,9 +16,9 @@
               <option value="cardio">Cardio</option>
             </select>
           </div>
-    </form>
+    </form> --}}
     <div class="exercise-wrapper">
-        
+{{!--         
         <div class="cardio-form">
             <div class="cardio-name">
               <label for="cardio-name">Name:</label>
@@ -32,9 +32,9 @@
               <label for="duration">Duration (minutes):</label>
               <input type="number" name="duration" id="duration" placeholder="10" />
             </div>
-        </div>
+        </div> --}}
 
-        <div class="resistance-form">
+        {{!-- <div class="resistance-form">
             <div class="exercise">
               <label for="name">Exercise Name:</label>
               <input type="text" name="name" id="resistance-name" placeholder="Bench Press" />
@@ -55,10 +55,58 @@
               <label for="resistance-duration">Duration (minutes):</label>
               <input type="number" name="resistance-duration" id="resistance-duration" placeholder="10" />
             </div>
-        </div>
+        </div> --}}
 
 
-        <button type="button" class="btn btn-primary" id="add-workout-button">Add workout</button>
+        <div class="fitness-form">
+            <div class="airman-name d-flex justify-content-between border border-bottom mt-4">
+              <label for="cardio-name">Airman's name:</label>
+              <input type="text" name="airman-name" id="airman-name">
+            </div>
+
+            <div class="cardio-endurance d-flex justify-content-between border border-bottom">
+              <label for="cardio-endurance">Cardio Endurance:</label>
+              <div>
+              <input type="number" name="name" id="cardio-time-1" min= "0" max="59">:<input type="number" name="name" id="cardio-time-2" min= "0" max="59">
+              </div>
+            </div>
+            <div class="body-composition d-flex justify-content-between border border-bottom">
+              <label for="body-composition">Body Composition:</label>
+              <select id="body-composition">
+                <option value="32.5">32.5 or lower</option>
+                <option value="33">33</option>
+                <option value="33.5">33.5</option>
+                <option value="34">34</option>
+                <option value="34.5">34.5</option>
+                <option value="35">35</option>
+                <option value="35.5">35.5</option>
+                <option value="36">36</option>
+                <option value="36.5">36.5</option>
+                <option value="37">37</option>
+                <option value="37.5">37.5</option>
+                <option value="38">38</option>
+                <option value="38.5">38.5</option>
+                <option value="39">39</option>
+                <option value="39.5">39.5 or higher</option>
+              </select>
+            </div>
+            <div class="push-ups d-flex justify-content-between border border-bottom">
+              <label for="push-ups">Push-ups:</label>
+              <input type="number" name="sets" id="push-ups" min= "0" max="999">
+            </div>
+            <div class="sit-ups d-flex justify-content-between border border-bottom">
+              <label for="sit-ups">Sit-ups:</label>
+              <input type="number" name="reps" id="sit-ups" min= "0" max="999">
+            </div>
+
+
+            <button type="button" class="btn btn-primary mt-4" id="add-workout-button">Add evaluation</button>
+      </div>
+
+
+
+
+        
 
     </div>
 </div>
