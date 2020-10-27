@@ -2,6 +2,7 @@
 // add evaluation button // 
 
 $('#add-workout-button').on('click', event => {
+    const year = moment().format('YYYY')
     const airmanName = $('#airman-name').val()
     const cardioTime = $('#cardio-time-1').val() + $('#cardio-time-2').val()
     const bodyComposition = $('#body-composition').val()
@@ -13,7 +14,8 @@ $('#add-workout-button').on('click', event => {
         cardioTime: cardioTime,
         bodyComposition: bodyComposition,
         pushUps: pushUps,
-        sitUps: sitUps
+        sitUps: sitUps,
+        year: year
     }
     addToDb(airMan)
 
