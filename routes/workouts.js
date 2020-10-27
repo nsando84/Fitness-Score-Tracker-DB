@@ -4,6 +4,10 @@ const db = require('../config/db')
 const maleUnder30 = require('./charts')
 
 
+
+
+// load page or get chart on search//
+
 router.get('/', (req,res) => {
     if (!req.query.name) {
         res.render('main')
@@ -21,6 +25,7 @@ router.get('/', (req,res) => {
 })
 
 
+// add new report //
 
 router.post('/', (req,res) => {
     const convertedScore = maleUnder30(req.body.cardioTime, req.body.bodyComposition, req.body.pushUps, req.body.sitUps)
@@ -65,19 +70,6 @@ router.post('/', (req,res) => {
         console.log(err)
         res.status(500).json({ message: 'error occurred'});
     })
-
-
-    // db.getDb()
-    // .db()
-    // .collection('workoutdb')
-    // .insertOne(airManScore)
-    // .then(() => {
-    //     res.sendStatus(200);
-    //   })
-    //   .catch(err => {
-    //     console.log(err)
-    //     res.status(500).json({ message: 'error occurred'});
-    // })
 })
 
 
