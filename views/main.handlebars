@@ -4,13 +4,14 @@
         <span class="h1">Fitness Evaluation</span>
       </nav>
 <div class="container">
-    <div class="mx-auto" id="chart"></div>
-
-    <div class="form-wrapper container">
- 
-    <div class="exercise-wrapper">
-
-        <div class="fitness-form">
+    <div class="mx-auto mt-3 mb-3" id="chart"></div>
+    <div class="search-button-wrapper mx-auto row">
+      <input class="form-control col-9" type="search" placeholder="Search person" aria-label="Search" class="d-inline-block">
+      <button class="btn btn-outline-success col" type="submit">Search</button>
+    </div>
+  
+    <div class="form-wrapper ">
+        <div class="fitness-form mx-auto">
             <div class="airman-name d-flex justify-content-between border-bottom mt-4">
               <label for="airman-name" class="p-2">Airman's name:</label>
               <input type="text" name="airman-name" id="airman-name">
@@ -58,7 +59,7 @@
 
 
             <button type="button" class="btn btn-primary mt-4" id="add-workout-button">Add evaluation</button>
-      </div>
+    
 
     </div>
 </div>

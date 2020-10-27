@@ -27,6 +27,11 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	/* background-image: url('../images/airforcelogo.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-position-y: center; */
 }
 ol, ul {
 	list-style: none;
@@ -49,6 +54,15 @@ table {
 }
 
 .fitness-form {
-	max-width: 300px;
+	max-width: 350px;
 }
 
+#chart {
+	max-width: 350px;
+	height: 400px;
+	background-color: bisque;
+}
+
+.search-button-wrapper {
+	max-width: 300px;
+}
