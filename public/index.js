@@ -63,33 +63,68 @@ $('.search-button-wrapper').on('submit', event => {
 
 
 function makeChart(userData) {
-    console.log(userData)
-
-
+    const years = []
+    const workoutCardio = []
+    const workoutBody = []
+    const workoutSitups = []
+    const workoutPushups = []
+    const workoutTotalScore = []
+    
+    for (const [keyFitness, valueFitness] of Object.entries(userData.fitness)) {
+        for (const [keyYears, valueYears] of Object.entries(valueFitness)) {
+            years.push(keyYears)
+            for (const [key, value] of Object.entries(valueYears)) {
+                switch (key) {
+                    case 'cardio':
+                        workoutCardio.push(value)
+                        break;
+                    case 'body':
+                        workoutBody.push(value)
+                        break;
+                    case 'pushups':
+                        workoutPushups.push(value)
+                        break;
+                    case 'situps':
+                        workoutSitups.push(value)
+                        break;
+                    default:
+                        workoutTotalScore.push(value)
+                }
+            } 
+        }
+    }
+    // console.log(workoutTotals)
+    // console.log(workoutKey)
     let ctx = document.getElementById('myChart').getContext('2d');
     let myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: years,
             datasets: [{
-                label: userData.name,
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
+                label: 'cardio',
+                data: workoutCardio,
+                borderColor: "blue",
+                borderWidth: 1
+            }
+            ,{
+                label: 'body',
+                data: workoutBody,
+                borderColor: "blue",
+                borderWidth: 1
+            },{
+                label: 'pushups',
+                data: workoutSitups,
+                borderColor: "blue",
+                borderWidth: 1
+            },{
+                label: 'situps',
+                data: workoutPushups,
+                borderColor: "blue",
+                borderWidth: 1
+            },{
+                label: 'total score',
+                data: workoutTotalScore,
+                borderColor: "blue",
                 borderWidth: 1
             }]
         },
@@ -98,8 +133,11 @@ function makeChart(userData) {
                 yAxes: [{
                     ticks: {
                         beginAtZero: true
-                    }
-                }]
+                    },
+                }],
+                xAxes: {
+                    stacked: true
+                }
             }
         }
     });

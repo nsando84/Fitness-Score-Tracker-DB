@@ -44,7 +44,7 @@ router.post('/', (req,res) => {
             db.getDb()
                 .db()
                 .collection('workoutdb')
-                .insertOne({name: req.body.airmanName, fitness: {'2020': {cardio: cardio, body: body, pushups: pushups, situps: situps, totatScore: totalScore}}})
+                .insertOne({name: req.body.airmanName, fitness: [{'2020': {cardio: cardio, body: body, pushups: pushups, situps: situps, totatScore: totalScore}}]})
                 .then(() => {
                     res.sendStatus(200);
                 })
