@@ -103,8 +103,7 @@ function makeChart(userData) {
                 data: workoutCardio,
                 borderColor: "blue",
                 borderWidth: 1
-            }
-            ,{
+            },{
                 label: 'body',
                 data: workoutBody,
                 borderColor: "blue",
@@ -132,10 +131,23 @@ function makeChart(userData) {
                     ticks: {
                         beginAtZero: true
                     },
-                }],
-                xAxes: {
-                    stacked: true
-                }
+                    plotLines: [{
+                        color: '#FF0000',
+                        width: 2,
+                        value: 75
+                    }]
+                }]
+            },
+            annotation: {
+                drawTime: "afterDatasetsDraw",
+                annotations: [{
+                    type: 'line',
+                    mode: 'horizontal',
+                    scaleID: 'y-axis-0',
+                    value: '75',
+                    borderColor: 'red',
+                    borderWidth: 1
+                }],     
             }
         }
     });
