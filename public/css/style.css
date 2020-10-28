@@ -70,3 +70,12 @@ table {
 	padding: 10px;
 	
 }
+
+
+.add-evaluation {
+	height: 50px;
+}
+
+.all-fields-warning {
+	display: none
+}

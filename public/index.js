@@ -2,22 +2,25 @@
 // add evaluation button // 
 
 $('#add-workout-button').on('click', event => {
-    const year = moment().format('YYYY')
     const airmanName = $('#airman-name').val()
     const cardioTime = $('#cardio-time-1').val() + $('#cardio-time-2').val()
     const bodyComposition = $('#body-composition').val()
     const pushUps = $('#push-ups').val()
     const sitUps = $('#sit-ups').val()
 
-    const airMan = {
-        airmanName: airmanName,
-        cardioTime: cardioTime,
-        bodyComposition: bodyComposition,
-        pushUps: pushUps,
-        sitUps: sitUps,
-        year: year
-    }
-    addToDb(airMan)
+    if (!airmanName || !cardioTime || !bodyComposition || !pushUps || !sitUps) {
+        $('.all-fields-warning').show()
+    } else {
+        $('.all-fields-warning').hide()
+        const airMan = {
+            airmanName: airmanName,
+            cardioTime: cardioTime,
+            bodyComposition: bodyComposition,
+            pushUps: pushUps,
+            sitUps: sitUps,
+        }
+        addToDb(airMan)
+    } 
 
 })
 

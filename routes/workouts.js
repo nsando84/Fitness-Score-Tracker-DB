@@ -66,7 +66,6 @@ router.post('/', (req,res) => {
                         .collection('workoutdb')
                         .updateOne({name: req.body.airmanName},{$push: {fitness: {[year]: {cardio: cardio, body: body, pushups: pushups, situps: situps, totatScore: totalScore}}}})
                         .then(() => {
-                            console.log('then then then')
                             res.sendStatus(200);
                         })
                         .catch(err => {
