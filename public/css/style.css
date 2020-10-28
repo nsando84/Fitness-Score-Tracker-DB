@@ -79,3 +79,7 @@ table {
 .all-fields-warning {
 	display: none
 }
+
+.already-tested-warning {
+	display: none;
+}

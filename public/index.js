@@ -7,11 +7,12 @@ $('#add-workout-button').on('click', event => {
     const bodyComposition = $('#body-composition').val()
     const pushUps = $('#push-ups').val()
     const sitUps = $('#sit-ups').val()
-
     if (!airmanName || !cardioTime || !bodyComposition || !pushUps || !sitUps) {
+        $('.already-tested-warning').hide()
         $('.all-fields-warning').show()
     } else {
         $('.all-fields-warning').hide()
+        $('.already-tested-warning').hide()
         const airMan = {
             airmanName: airmanName,
             cardioTime: cardioTime,
@@ -21,7 +22,6 @@ $('#add-workout-button').on('click', event => {
         }
         addToDb(airMan)
     } 
-
 })
 
 
@@ -32,8 +32,11 @@ function addToDb(exerciseData) {
         method: 'POST',
         data: exerciseData
     })
-    .then(() => {
-        console.log('then ajax')
+    .then(result => {
+        if (result == 'alreadytested') {
+            $('.all-fields-warning').hide()
+            $('.already-tested-warning').show()
+        }
         $('.fitness-form :input').val('')
     })
     .catch(err => console.log(err))
@@ -57,7 +60,6 @@ $('.search-button-wrapper').on('submit', event => {
         makeChart(results)
     })
     .catch(err => console.log(err))
-
 
 })
 
