@@ -68,7 +68,8 @@ $('.search-button-wrapper').on('submit', event => {
 
 
 function makeChart(userData) {
-    console.log(userData)
+
+    const NameCap = userData.name.split(' ').map(e => e.charAt(0).toUpperCase() + e.slice(1)).join(' ')
     const years = []
     const workoutCardio = []
     const workoutBody = []
@@ -159,7 +160,7 @@ function makeChart(userData) {
             },
             title: {
                 display: true,
-                text: userData.name
+                text: NameCap
             }
         }
     });
