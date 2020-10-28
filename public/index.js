@@ -68,6 +68,7 @@ $('.search-button-wrapper').on('submit', event => {
 
 
 function makeChart(userData) {
+    console.log(userData)
     const years = []
     const workoutCardio = []
     const workoutBody = []
@@ -123,12 +124,6 @@ function makeChart(userData) {
                 data: workoutPushups,
                 backgroundColor: '#b3daff',
                 borderWidth: 1
-            // }
-            // ,{
-            //     label: 'total score',
-            //     data: workoutTotalScore,
-            //     borderColor: "blue",
-            //     borderWidth: 1
             }]
         },
         options: {
@@ -151,8 +146,20 @@ function makeChart(userData) {
                     scaleID: 'y-axis-0',
                     value: '75',
                     borderColor: 'red',
-                    borderWidth: 1
+                    borderWidth: 2,
+                    label: {
+                        enabled: true,
+                        content: 'Requied',
+                        position: 'right',
+                        backgroundColor: 'transparent',
+                        fontColor: 'red',
+                        yAdjust: -10
+                    }
                 }],     
+            },
+            title: {
+                display: true,
+                text: userData.name
             }
         }
     });
