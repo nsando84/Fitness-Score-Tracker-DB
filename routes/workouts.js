@@ -58,7 +58,7 @@ router.post('/', (req,res) => {
                 .collection('workoutdb')
                 .findOne({_id: result._id})
                 .then(result => {
-                    if (result.fitness[0].hasOwnProperty(year)) {
+                    if (result.fitness.find(yearCheck => yearCheck.hasOwnProperty(year))) {
                         res.send('alreadytested')
                     } else {
                         db.getDb()
