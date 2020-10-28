@@ -106,28 +106,29 @@ function makeChart(userData) {
             datasets: [{
                 label: 'cardio',
                 data: workoutCardio,
-                borderColor: "blue",
+                backgroundColor: '#004080',
                 borderWidth: 1
             },{
                 label: 'body',
                 data: workoutBody,
-                borderColor: "blue",
+                backgroundColor: '#0080ff',
                 borderWidth: 1
             },{
                 label: 'pushups',
                 data: workoutSitups,
-                borderColor: "blue",
+                backgroundColor: '#66b3ff',
                 borderWidth: 1
             },{
                 label: 'situps',
                 data: workoutPushups,
-                borderColor: "blue",
+                backgroundColor: '#b3daff',
                 borderWidth: 1
-            },{
-                label: 'total score',
-                data: workoutTotalScore,
-                borderColor: "blue",
-                borderWidth: 1
+            // }
+            // ,{
+            //     label: 'total score',
+            //     data: workoutTotalScore,
+            //     borderColor: "blue",
+            //     borderWidth: 1
             }]
         },
         options: {
@@ -136,12 +137,11 @@ function makeChart(userData) {
                     ticks: {
                         beginAtZero: true
                     },
-                    plotLines: [{
-                        color: '#FF0000',
-                        width: 2,
-                        value: 75
-                    }]
-                }]
+                    stacked: true
+                }],
+                xAxes: [{
+                    stacked: true
+                }],
             },
             annotation: {
                 drawTime: "afterDatasetsDraw",
