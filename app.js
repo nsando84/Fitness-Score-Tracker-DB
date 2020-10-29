@@ -7,7 +7,7 @@ app.set('view engine', 'handlebars')
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'))
-
+const PORT = process.env.PORT || 8000
 
 
 app.use('/', require('./routes/workouts'))
@@ -17,7 +17,7 @@ db.initDb((err, db ) => {
     if (err) {
       console.log(err)
     } else {
-        app.listen(process.env.PORT || 8000, () => {
+        app.listen(PORT, () => {
             console.log('listening on 8000')
         })
     }
