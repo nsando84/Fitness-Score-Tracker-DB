@@ -24,12 +24,11 @@
   - Application is based on official data [here](https://www.afpc.af.mil/portals/70/documents/06_CAREER%20management/03_fitness%20program/fitness%20charts.pdf) for fitness evalutions by the US Airforce.
   - User can enter airman's score in database.
   - User can check airman's current & previous scores via chart display.
-  - Recent search bar implemented for better experience.
   - Utilizes IndexedDB to store chart data from recent airmen queried. 
   - To reduce mongoDb queries. it will pull chart data from recent searches from the indexedDb.
-  - Validation: Only one test can be entered in for an airman in a given year
+  - Validation: Only one test can be entered for an airman in a given year
   - Validation: input validiations in place to reduce errors.
-  - Deloyed with Heroku
+  - Deloyed using Heroku & Mongodb Atlas
   
 ---
 
