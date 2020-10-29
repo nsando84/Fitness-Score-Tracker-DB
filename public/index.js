@@ -46,6 +46,7 @@ function addToDb(exerciseData) {
 // search for an airman //
 
 $('.search-button-wrapper').on('submit', event => {
+    $('.already-tested-warning').hide()
     event.preventDefault()
     const airmanName = {
         name: $('.search-button-wrapper :input').val()
@@ -84,6 +85,7 @@ function loadSearches(airmanData) {
 // search link function //
 
 $('.recent-search-box').on('click', event => {
+    $('.already-tested-warning').hide()
     $('.image-logo').hide()
     const nameToFind = $(event.target).data('value')
     queryName(nameToFind)
