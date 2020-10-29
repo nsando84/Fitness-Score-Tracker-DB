@@ -28,6 +28,7 @@ function addData (result) {
     const trans = db.transaction('airmanData', 'readwrite')
     const airManData = trans.objectStore('airmanData')
     trans.onerror = e => console.log(e)
+    delete result._id
     airManData.add(result)
 }
  
