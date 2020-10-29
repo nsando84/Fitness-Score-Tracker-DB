@@ -54,8 +54,16 @@ $('.search-button-wrapper').on('submit', event => {
         data: airmanName
     })
     .then(results => {
+        if (typeof results == 'object') {
+        if (!checkSearchAirman(results)) {  
         addData(results)
+        }
         makeChart(results)
+        $('.airman-link').remove()
+        loadRecentSearches()
+        } else {
+            console.log('no data exists')
+        }
     })
     .catch(err => console.log(err))
 })
@@ -65,7 +73,7 @@ $('.search-button-wrapper').on('submit', event => {
 function loadSearches(airmanData) {
     const AirName = airmanData.split(' ').map(e => e.charAt(0).toUpperCase() + e.slice(1)).join(' ')
     const searchBoxDiv = $('.recent-search-box')
-    const nameP = $(`<a class="d-inline-block airman-link mr-2" data-value="${AirName}">${AirName}</a>`)
+    const nameP = $(`<a class="airman-link mr-2" data-value="${AirName}">${AirName} \</a>`)
     searchBoxDiv.append(nameP)
 
 }
@@ -75,6 +83,19 @@ function loadSearches(airmanData) {
 $('.recent-search-box').on('click', event => {
     const nameToFind = $(event.target).data('value')
     queryName(nameToFind)
-
-
 })
+
+// check if airman exists in search bar //
+
+function checkSearchAirman(results) {
+    const resultsName = results.name.split(' ').map(e => e.charAt(0).toUpperCase() + e.slice(1)).join(' ')
+    const resultsAChecker = $('.recent-search-box').children('a')
+    const checker = Object.entries(resultsAChecker).some((e,index) => {
+        if (index < resultsAChecker.length) {
+            if (e[1].dataset.value == resultsName) {
+                return true
+            }
+        }
+    })
+    return checker
+}

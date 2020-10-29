@@ -32,6 +32,8 @@ function addData (result) {
 }
  
 
+
+
 // viewed results into the chart //
 
 function loadRecentSearches () {

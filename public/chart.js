@@ -99,7 +99,9 @@ function makeChart(userData) {
             },
             title: {
                 display: true,
-                text: NameCap
+                text: NameCap,
+                fontSize: 18,
+                lineHeight: 1.5
             }
         }
     });
