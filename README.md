@@ -1,6 +1,6 @@
 # **Unofficial USAF Fitness Score Database**   ![Github All Releases](https://img.shields.io/github/contributors/nsando84/Fitness-Score-Tracker-DB)   
 
-![Screen Shot 2020-10-29 at 1 26 40 AM](https://user-images.githubusercontent.com/67135603/97543711-d6cc7380-1985-11eb-8012-9cbfde33d817.png)
+![Screen Shot 2020-10-29 at 4 07 25 PM](https://user-images.githubusercontent.com/67135603/97641785-ef2da400-1a00-11eb-95ae-d5e000b79678.png)
 
 
 
