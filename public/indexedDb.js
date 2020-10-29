@@ -72,7 +72,6 @@ function queryName (queryName) {
 // delete from chart 5 limit-size //
 
 function delFromChart(dataToDelete) {
-    console.log(dataToDelete)
     const transact = db.transaction('airmanData', 'readwrite')
     const airmanData = transact.objectStore('airmanData')
     const request = airmanData.openCursor()
