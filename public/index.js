@@ -54,7 +54,9 @@ $('.search-button-wrapper').on('submit', event => {
         data: airmanName
     })
     .then(results => {
+        $('.search-button-wrapper :input').val('')
         if (typeof results == 'object') {
+        $('.no-data-error').hide()
         if (!checkSearchAirman(results)) {  
         addData(results)
         }
@@ -62,7 +64,7 @@ $('.search-button-wrapper').on('submit', event => {
         $('.airman-link').remove()
         loadRecentSearches()
         } else {
-            console.log('no data exists')
+            $('.no-data-error').show()
         }
     })
     .catch(err => console.log(err))
