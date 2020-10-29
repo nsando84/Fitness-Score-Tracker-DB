@@ -87,3 +87,21 @@ function delFromChart(dataToDelete) {
         }
     }
 }
+
+// delete airman if added new year // 
+
+function updateChecker(dataToUpdate) {
+    const transact = db.transaction('airmanData', 'readwrite')
+    const airmanData = transact.objectStore('airmanData')
+    const request = airmanData.openCursor()
+    request.onsuccess = event => {
+        const cursor = event.target.result
+        if (cursor) {
+            const cursorDelSearch = cursor.value.name.split(' ').map(e => e.charAt(0).toUpperCase() + e.slice(1)).join(' ')
+            if (dataToUpdate == cursorDelSearch) {
+                cursor.delete()
+            }
+            cursor.continue()
+        }
+    }
+}

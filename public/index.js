@@ -37,6 +37,7 @@ function addToDb(exerciseData) {
             $('.already-tested-warning').show()
         }
         $('.fitness-form :input').val('')
+        updateCheckSearchAirman(exerciseData.airmanName)  
     })
     .catch(err => console.log(err))
 
@@ -76,8 +77,7 @@ function loadSearches(airmanData) {
     const AirName = airmanData.split(' ').map(e => e.charAt(0).toUpperCase() + e.slice(1)).join(' ')
     const searchBoxDiv = $('.recent-search-box')
     const nameP = $(`<a class="airman-link mr-2" data-value="${AirName}">${AirName} \</a>`)
-    searchBoxDiv.append(nameP)
-
+    searchBoxDiv.append(nameP) 
 }
 
 // search link function //
@@ -100,10 +100,25 @@ function checkSearchAirman(results) {
                 return true
             }
         }
-
     })
     if (!checker && resultsAChecker.length > 4) {
         delFromChart(savedNameForDelete) 
     }
+    return checker
+}
+
+// check if exists during update //
+
+function updateCheckSearchAirman(results) {
+    const resultsName = results.split(' ').map(e => e.charAt(0).toUpperCase() + e.slice(1)).join(' ')
+    const resultsAChecker = $('.recent-search-box').children('a')
+    const checker = Object.entries(resultsAChecker).some((e,index) => {
+        if (index < resultsAChecker.length) {
+            if (e[1].dataset.value == resultsName) {
+                updateChecker(resultsName)
+                location.reload()
+            }
+        }
+    }) 
     return checker
 }
