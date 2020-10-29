@@ -61,6 +61,7 @@ $('.search-button-wrapper').on('submit', event => {
         if (!checkSearchAirman(results)) {  
         addData(results)
         }
+        $('.image-logo').hide()
         makeChart(results)
         $('.airman-link').remove()
         loadRecentSearches()
@@ -83,6 +84,7 @@ function loadSearches(airmanData) {
 // search link function //
 
 $('.recent-search-box').on('click', event => {
+    $('.image-logo').hide()
     const nameToFind = $(event.target).data('value')
     queryName(nameToFind)
 })

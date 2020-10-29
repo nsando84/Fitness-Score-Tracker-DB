@@ -54,12 +54,18 @@ table {
 
 #chart {
 	max-width: 450px;
+
 }
 
 #myChart {
 	max-height: 350px;
 	margin: 0;
 	padding: 0;
+	display: none;
+}
+
+.image-logo {
+	max-height: 350px;
 }
 
 .search-button-wrapper {
