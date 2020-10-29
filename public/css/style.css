@@ -71,7 +71,6 @@ table {
 	
 }
 
-
 .add-evaluation {
 	height: 50px;
 }
@@ -82,4 +81,14 @@ table {
 
 .already-tested-warning {
 	display: none;
+}
+
+.recent-search-box {
+	height: 50px;
+	border: 1px solid black;
+	max-width: 400px;
+}
+
+.airman-link {
+	cursor: pointer;
 }

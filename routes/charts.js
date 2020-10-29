@@ -1,5 +1,5 @@
-const e = require("express")
 
+// scores the user based on input data //
 
 function maleUnder30(cardioS, bodyS, pushupS, situpS) {
     let score = []
