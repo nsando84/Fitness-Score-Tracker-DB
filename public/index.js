@@ -92,12 +92,18 @@ $('.recent-search-box').on('click', event => {
 function checkSearchAirman(results) {
     const resultsName = results.name.split(' ').map(e => e.charAt(0).toUpperCase() + e.slice(1)).join(' ')
     const resultsAChecker = $('.recent-search-box').children('a')
+    let savedNameForDelete = ''
     const checker = Object.entries(resultsAChecker).some((e,index) => {
+        if (e[1] !== 0 && index == 0) savedNameForDelete += e[1].dataset.value
         if (index < resultsAChecker.length) {
             if (e[1].dataset.value == resultsName) {
                 return true
             }
         }
+
     })
+    if (!checker && resultsAChecker.length > 4) {
+        delFromChart(savedNameForDelete) 
+    }
     return checker
 }

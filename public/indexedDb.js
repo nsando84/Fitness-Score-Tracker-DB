@@ -49,6 +49,8 @@ function loadRecentSearches () {
     }
 }
 
+// click on name creates chart //
+
 function queryName (queryName) {
     const transact = db.transaction('airmanData', 'readonly')
     const airmanData = transact.objectStore('airmanData')
@@ -60,6 +62,26 @@ function queryName (queryName) {
             if (queryName == cursorSearch) {
                 console.log(cursor.value)
                 makeChart(cursor.value)
+            }
+            cursor.continue()
+        }
+    }
+}
+
+
+// delete from chart 5 limit-size //
+
+function delFromChart(dataToDelete) {
+    console.log(dataToDelete)
+    const transact = db.transaction('airmanData', 'readwrite')
+    const airmanData = transact.objectStore('airmanData')
+    const request = airmanData.openCursor()
+    request.onsuccess = event => {
+        const cursor = event.target.result
+        if (cursor) {
+            const cursorDelSearch = cursor.value.name.split(' ').map(e => e.charAt(0).toUpperCase() + e.slice(1)).join(' ')
+            if (dataToDelete == cursorDelSearch) {
+                cursor.delete()
             }
             cursor.continue()
         }
