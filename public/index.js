@@ -47,9 +47,11 @@ function addToDb(exerciseData) {
 
 $('.search-button-wrapper').on('submit', event => {
     $('.already-tested-warning').hide()
+    const underCaseName = $('.search-button-wrapper :input').val().toLowerCase()
+
     event.preventDefault()
     const airmanName = {
-        name: $('.search-button-wrapper :input').val()
+        name: underCaseName
     }
     $.ajax('/', {
         method: 'GET',
