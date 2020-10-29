@@ -21,7 +21,7 @@
  
   ### Features in this application:
   
-  - Application is based on official data [here](https://www.afpc.af.mil/portals/70/documents/06_CAREER%20management/03_fitness%20program/fitness%20charts.pdfhttps://www.afpc.af.mil/portals/70/documents/06_CAREER%20management/03_fitness%20program/fitness%20charts.pdf) for fitness evalutions by the US Airforce.
+  - Application is based on official data [here](https://www.afpc.af.mil/portals/70/documents/06_CAREER%20management/03_fitness%20program/fitness%20charts.pdf) for fitness evalutions by the US Airforce.
   - User can enter airman's score in database.
   - User can check airman's current & previous scores via chart display.
   - Recent search bar implemented for better experience.
