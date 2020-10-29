@@ -15,9 +15,9 @@
 
   ### Using Mongodb, IndexedDb, Express, & Chart.js, the task was to create a fitness tracker application. Check it out below.
 
- #### Demo the app here ----  [***Unofficial USAF Fitness Score Database***](https://us-fitness-score.herokuapp.com/)
+ #### Demo the app here - [***Unofficial USAF Fitness Score Database***](https://us-fitness-score.herokuapp.com/)
  
- ### Under 2 minute application demo ---- [Right Here](https://drive.google.com/file/d/1gLguB57RV6hOV0EuNUWAZ-8_TroCG3mi/view)
+ ### Under 2 minute application demo - [Right Here](https://drive.google.com/file/d/1gLguB57RV6hOV0EuNUWAZ-8_TroCG3mi/view)
  
   ### Features in this application:
   
