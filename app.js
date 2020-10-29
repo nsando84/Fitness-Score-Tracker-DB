@@ -13,12 +13,12 @@ const PORT = process.env.PORT || 8000
 app.use('/', require('./routes/workouts'))
 
 
+app.listen(PORT, () => {
+  console.log('listening on 8000')
+})
+
 db.initDb((err, db ) => {
     if (err) {
       console.log(err)
-    } else {
-        app.listen(PORT, () => {
-            console.log('listening on 8000')
-        })
-    }
-  })
+    } 
+})
