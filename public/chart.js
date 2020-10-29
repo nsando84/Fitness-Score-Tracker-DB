@@ -89,7 +89,7 @@ function makeChart(userData) {
                     borderWidth: 2,
                     label: {
                         enabled: true,
-                        content: 'Requied',
+                        content: 'Required',
                         position: 'right',
                         backgroundColor: 'transparent',
                         fontColor: 'red',

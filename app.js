@@ -14,11 +14,10 @@ app.use('/', require('./routes/workouts'))
 
 
 app.listen(PORT, () => {
-  console.log('listening on 8000')
-})
-
-db.initDb((err, db ) => {
+  db.initDb((err, db ) => {
     if (err) {
       console.log(err)
     } 
 })
+})
+
