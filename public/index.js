@@ -63,7 +63,7 @@ $('.search-button-wrapper').on('submit', event => {
 // load recent searches //
 
 function loadSearches(airmanData) {
-    const AirName = airmanData.value.name.split(' ').map(e => e.charAt(0).toUpperCase() + e.slice(1)).join(' ')
+    const AirName = airmanData.split(' ').map(e => e.charAt(0).toUpperCase() + e.slice(1)).join(' ')
     const searchBoxDiv = $('.recent-search-box')
     const nameP = $(`<a class="d-inline-block airman-link mr-2" data-value="${AirName}">${AirName}</a>`)
     searchBoxDiv.append(nameP)
@@ -73,6 +73,8 @@ function loadSearches(airmanData) {
 // search link function //
 
 $('.recent-search-box').on('click', event => {
-    console.log(event.target.data('value'))
+    const nameToFind = $(event.target).data('value')
+    queryName(nameToFind)
+
 
 })

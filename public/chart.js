@@ -35,6 +35,10 @@ function makeChart(userData) {
             } 
         }
     }
+    
+    $("#myChart").remove()
+    $("#chart").append(`<canvas id="myChart" height="350" width="350"></canvas`)
+ 
     let ctx = document.getElementById('myChart').getContext('2d');
     let myChart = new Chart(ctx, {
         type: 'bar',

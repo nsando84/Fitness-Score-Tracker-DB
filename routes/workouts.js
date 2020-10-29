@@ -9,7 +9,6 @@ const year = moment().format('YYYY')
 // load page or get chart on search//
 
 router.get('/', (req,res) => {
-
     if (!req.query.name) {
         res.render('main')
     } else {
