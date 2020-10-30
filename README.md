@@ -13,7 +13,7 @@
 
   
 
-  ### Using Mongodb, IndexedDb, Express, & Chart.js, the task was to create a fitness tracker application. Check it out below.
+  ### Using MongoDB, IndexedDB, Express, & Chart.js, the task was to create a fitness tracker application. Check it out below.
 
  #### Demo the app here - [***Unofficial USAF Fitness Score Database***](https://us-fitness-score.herokuapp.com/)
  
