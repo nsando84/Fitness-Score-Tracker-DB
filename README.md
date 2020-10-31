@@ -25,7 +25,7 @@
   - User can enter airman's score in database.
   - User can check airman's current & previous scores via chart display.
   - Utilizes IndexedDB to store chart data from recent airmen queried. 
-  - To reduce mongoDb queries. it will pull chart data from recent searches from the indexedDb.
+  - To reduce mongoDB queries. it will pull chart data from recent searches from the indexedDB.
   - Validation: Only one test can be entered for an airman in a given year
   - Validation: input validiations in place to reduce errors.
   - Deloyed using Heroku & MongoDB Atlas
@@ -58,7 +58,7 @@
 
 ### **Usage**
 
-#### This application is for a user to track his flight's Physical Fitness Test scores. 
+#### This application is for a user to track their flight's Physical Fitness Test scores. 
 
 ![Screen Shot 2020-10-29 at 1 45 52 AM](https://user-images.githubusercontent.com/67135603/97545643-8acefe00-1988-11eb-9050-bef13f690ce7.png)
 
