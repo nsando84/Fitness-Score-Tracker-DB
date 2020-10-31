@@ -28,7 +28,7 @@
   - To reduce mongoDb queries. it will pull chart data from recent searches from the indexedDb.
   - Validation: Only one test can be entered for an airman in a given year
   - Validation: input validiations in place to reduce errors.
-  - Deloyed using Heroku & Mongodb Atlas
+  - Deloyed using Heroku & MongoDB Atlas
   
 ---
 
