@@ -13,7 +13,7 @@
 
   
 
-  ### the task was to create a fitness tracker application. Check it out below.
+  ### The task was to create a fitness tracker application. Check it out below.
   
   #### MongoDB, IndexedDB, Express, Handlebars, & Chart.js
 
